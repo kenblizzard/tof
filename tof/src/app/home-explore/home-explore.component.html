@@ -1,0 +1,16 @@
+<div class="container-fluid text-center">
+	<h1>{{textWelcome}}</h1>
+	<div class="row ">
+	<form class="col-xs-12 col-md-6 text-center mx-auto">
+		<div class="form-group">
+			
+				<input type="text" class="form-control" placeholder="Maghanap (e.g. Mt. Pulag, Boracay, Palawan)" [(ngModel)]=textSearch [ngModelOptions]="{standalone: true}">
+			
+			
+				<a type="button" class="btn btn-dark " (click)="onClickSearch()">Search</a>
+				<a type="button" class="btn btn-light">Explore</a>
+			
+		</div>
+	</form>
+	</div>
+</div>
