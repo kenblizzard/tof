@@ -6,6 +6,7 @@ import { routes } from './app.router';
 import { AppComponent } from './app.component';
 import { HomeExploreComponent } from './home-explore/home-explore.component';
 import { MainSearchFormComponent } from './main-search-form/main-search-form.component';
+import { TravelSpotServiceService } from './travel-spot-service.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { MainSearchFormComponent } from './main-search-form/main-search-form.com
     FormsModule,
     routes
   ],
-  providers: [],
+  providers: [TravelSpotServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

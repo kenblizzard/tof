@@ -7,7 +7,7 @@
 				<input type="text" class="form-control" placeholder="Maghanap (e.g. Mt. Pulag, Boracay, Palawan)" [(ngModel)]=textSearch [ngModelOptions]="{standalone: true}">
 			
 			
-				<a type="button" class="btn btn-dark " (click)="onClickSearch()">Search</a>
+				<a type="button" class="btn btn-dark "  [routerLink]="['/search', textSearch]">Search</a>
 				<a type="button" class="btn btn-light">Explore</a>
 			
 		</div>

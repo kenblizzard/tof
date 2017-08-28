@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TravelSpot } from '../travel-spot';
+import { TravelSpotServiceService } from '../travel-spot-service.service';
 
 @Component({
   selector: 'app-main-search-form',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-search-form.component.css']
 })
 export class MainSearchFormComponent implements OnInit {
+	travelSpots : TravelSpot[];
 
-  constructor() { }
+	setTravelSpots() : void {
+	this.travelSpots = this.travelSpotServiceService.getTravelSpots();
+	}
+
+  constructor(private travelSpotServiceService: TravelSpotServiceService) { }
 
   ngOnInit() {
+  this.setTravelSpots();
   }
 
 }
