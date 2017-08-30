@@ -11,7 +11,7 @@ export class MainSearchFormComponent implements OnInit {
 	travelSpots : TravelSpot[];
 
 	setTravelSpots() : void {
-	this.travelSpots = this.travelSpotServiceService.getTravelSpots();
+		this.travelSpotServiceService.getTravelSpots().then(travelSpots => this.travelSpots = travelSpots);
 	}
 
   constructor(private travelSpotServiceService: TravelSpotServiceService) { }

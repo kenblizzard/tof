@@ -6,16 +6,34 @@ export class TravelSpotServiceService {
 
   constructor( ) { }
   
-  getTravelSpots() : TravelSpot [] 
-  {
-  	let listTravelSpot : Array<TravelSpot> = [{
-  	id: 1, name: "Mt. Ulap", description: "sample"
+  listTravelSpot : Array<TravelSpot> = [{
+  	id: 1, name: "Mt. Ulap", description: "A “mini-Mt. Ugo” which showcases the best of what the Cordilleras has to offer: Pine and grassland ridges with stunning views of the mountains, and even a glimpse of culture with villages, burial caves, and hanging bridges, the Mt. Ulap Eco-Trail in Itogon, Benguet is the perfect dayhike from Baguio City, only 40 minutes away from Burnham Park by public jeepney. Spanning around 8 kilometres through several peaks along the Ampucao-Sta. Fe Ridge (not to be confused with the Philex Ridge), it is easy enough to be completed from 4-6 hours, making it feasible as a dayhike or even a half-dayhike for hikers of all levels.\n\nThe trailhead starts along from the road to Philex in Brgy. Ampucao, but as of December 2015, hikers have to make a 10-minute detour to the barangay hall to register and secure guides (required). The trail goes up a ridgeline that is immediately surrounded by pines, and soon becomes scenic with views of Mt. Sto. Tomas and Baguio City; the perennially mist-covered Central Cordilleras from Ugo to Pulag; and to the south, even Mt. Arayat.", displayImg: "http://3c9bl93o71m619w9kn2rfwinkdh.wpengine.netdna-cdn.com/wp-content/uploads/2016/09/Gungal-Rock-Mt-Ulap-Benguet.jpg"
   	},{
-  	id: 2, name: "Mt. Pulag", description: "sample"
+  	id: 2, name: "Mt. Pulag", description: "sample", displayImg: "http://www.trailadventours.com/images/0644de6c228aeed128ecc4cfcfb90e62.jpg"
   	}, {
-  	id: 3, name: "Mt. Mayon", description: "sample"
+  	id: 3, name: "Mt. Mayon", description: "sample", displayImg: "http://www.trailadventours.com/images/0644de6c228aeed128ecc4cfcfb90e62.jpg"
+  	},
+	{
+  	id: 4, name: "Mt. sample lang", description: "sample", displayImg: "http://www.trailadventours.com/images/0644de6c228aeed128ecc4cfcfb90e62.jpg"
+  	},
+	{
+  	id: 5, name: "Mt. my testing", description: "sample", displayImg: "http://www.trailadventours.com/images/0644de6c228aeed128ecc4cfcfb90e62.jpg"
+  	},
+	{
+  	id: 6, name: "Mt. Sample", description: "sample", displayImg: "http://www.trailadventours.com/images/0644de6c228aeed128ecc4cfcfb90e62.jpg"
+  	},
+	{
+  	id: 7, name: "Mt. Test", description: "sample", displayImg: "http://www.trailadventours.com/images/0644de6c228aeed128ecc4cfcfb90e62.jpg"
   	}];
-  	return listTravelSpot;
+  
+  getTravelSpots() : Promise<TravelSpot [] >
+  {
+  	return Promise.resolve(this.listTravelSpot);
+  }
+  
+  getTravelSpotById(id:number) : Promise<TravelSpot> {
+  return this.getTravelSpots()
+             .then(listTravelSpot => listTravelSpot.find(travelSpot => travelSpot.id === id));
   }
 
 }
