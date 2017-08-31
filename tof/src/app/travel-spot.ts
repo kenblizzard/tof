@@ -13,6 +13,7 @@ export class TravelSpot {
 	
 	tags: string [];
 	category: string;
-	
-
+	numSumRating: number;
+	numTotalRating: number;
+	numVisitors: number;
 }
