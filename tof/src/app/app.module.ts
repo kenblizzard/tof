@@ -12,13 +12,15 @@ import { HomeExploreComponent } from './home-explore/home-explore.component';
 import { MainSearchFormComponent } from './main-search-form/main-search-form.component';
 import { TravelSpotServiceService } from './travel-spot-service.service';
 import { MainTravelSpotComponent } from './main-travel-spot/main-travel-spot.component';
+import { CreateTravelSpotComponent } from './create-travel-spot/create-travel-spot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeExploreComponent,
     MainSearchFormComponent,
-    MainTravelSpotComponent
+    MainTravelSpotComponent,
+    CreateTravelSpotComponent
   ],
   imports: [
     BrowserModule,
