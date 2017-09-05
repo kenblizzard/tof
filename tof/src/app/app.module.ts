@@ -13,6 +13,7 @@ import { MainSearchFormComponent } from './main-search-form/main-search-form.com
 import { TravelSpotServiceService } from './travel-spot-service.service';
 import { MainTravelSpotComponent } from './main-travel-spot/main-travel-spot.component';
 import { CreateTravelSpotComponent } from './create-travel-spot/create-travel-spot.component';
+import { CreateTravelSpotPart2Component } from './create-travel-spot-part2/create-travel-spot-part2.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreateTravelSpotComponent } from './create-travel-spot/create-travel-sp
     HomeExploreComponent,
     MainSearchFormComponent,
     MainTravelSpotComponent,
-    CreateTravelSpotComponent
+    CreateTravelSpotComponent,
+    CreateTravelSpotPart2Component
   ],
   imports: [
     BrowserModule,

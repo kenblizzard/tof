@@ -2,28 +2,30 @@ export class TravelSpot {
 	recordStatus: string;
 	id: number;
 	name: string;
-	description: string;
-	displayImg: string;
-	contactNum: number;
-
-	
-
-
+	caption: string;	
+	displayImg: string;	
 
 	street: string;
 	brgy: string;
 	areaName: string;
 	city: string;
 	province: string;
+	region: string;
 	zipCode: string;
 	
-	visitorAge: number;
+	description: string;
+	visitorAgeCategory: string;
 	tags: string [];
 	category: string;
+	costRangeFrom: number;
+	costRangeTo: number;
+	activities: string [];
+	contactNum: string;
+	
+	
+	
 	numSumRating: number;
 	numTotalRating: number;
 	numVisitors: number;
-	costRange: number;
-
-	activities: string [];
+	
 }
