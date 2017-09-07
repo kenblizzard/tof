@@ -35,5 +35,8 @@ export class TravelSpotServiceService {
   return this.getTravelSpots()
              .then(listTravelSpot => listTravelSpot.find(travelSpot => travelSpot.id === id));
   }
+  
+  insertTravelSpot(travelSpot : TravelSpot) {
+  }
 
 }
