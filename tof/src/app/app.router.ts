@@ -11,7 +11,7 @@ import { CreateTravelSpotPart2Component } from './create-travel-spot-part2/creat
 export const router: Routes = [
     { path: '', redirectTo: 'explore', pathMatch: 'full' },
     { path: 'explore', component: HomeExploreComponent },
-    { path: 'search/:param', component: MainSearchFormComponent},
+    { path: 'search/:searchString', component: MainSearchFormComponent},
     { path: 'spot/create', component: CreateTravelSpotComponent},
 	{ path: 'spot/create/:id/2', component: CreateTravelSpotPart2Component},
 	{ path: 'spot/:id', component: MainTravelSpotComponent}

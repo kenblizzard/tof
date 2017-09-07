@@ -2,22 +2,57 @@
 	<form class="col-md-8">
 		<h1 class="text-center">Step 1</h1>
 		<h2 class="text-center">New Travel Spot</h2>
+		<h3>Details</h3>
 		<div class="form-group row">
-			<label class="col-xs-2 col-sm-2 col-md-2"> Name</label>
-			<input type="text" class="form-control col-xs-10 col-sm-10 col-md-10" aria-describedby="emailHelp" placeholder="(e.g. Mt. Pulag, Mt. Ulap, Chocolate Hills)"/>
+
+			<label class="col-xs-3 col-sm-3 col-md-3"> Name</label>
+			<input type="text" class="form-control col-xs-9 col-sm-9 col-md-9" aria-describedby="emailHelp" placeholder="(e.g. Mt. Pulag, Mt. Ulap, Chocolate Hills)"/>
 			<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 		</div>
 		<div class="form-group row">
-			<label class="col-xs-2 col-sm-2 col-md-2">Caption</label>
-			<input type="text" class="form-control col-xs-10 col-sm-10 col-md-10" placeholder="Catchy and interesting phrase. (max 50 characters)"/>
+			<label class="col-xs-3 col-sm-3 col-md-3">Caption</label>
+			<input type="text" class="form-control col-xs-9 col-sm-9 col-md-9" placeholder="Catchy and interesting phrase. (max 50 characters)"/>
 		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input type="checkbox" class="form-check-input"/>
-      Check me out
-			</label>
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-		<a href="spot/create/1/2"class="btn btn-success ">Next</a>
-	</form>
-</div>
+		<hr>
+			<h3>Address</h3>
+			<div class="form-group row">
+				<label class="col-xs-3 col-sm-3 col-md-3">Quick Search</label>
+
+				<input places-auto-complete (initialized$)="initialized($event)" (place_changed)="placeChanged(place)"   class="form-control col-xs-9 col-sm-9 col-md-9"/>
+				<p class="form-text text-muted float-right">We'll never share your email with anyone else.</p>
+				
+			</div>
+			<div class="form-group row">
+				<label class="col-xs-3 col-sm-3 col-md-3">Street</label>
+				<input type="text" class="form-control col-xs-9 col-sm-9 col-md-9" [(ngModel)]=address.route name="street"/>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-xs-3 col-sm-3 col-md-3">Barangay/ Subdivision</label>
+				<input type="text" class="form-control col-xs-9 col-sm-9 col-md-9" [(ngModel)]=address.sublocality_level_1  name="brgy"/>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-xs-3 col-sm-3 col-md-3">City</label>
+				<input type="text" class="form-control col-xs-9 col-sm-9 col-md-9" [(ngModel)]=address.locality  name="city"/>
+			</div>
+			<div class="form-group row">
+				<label class="col-xs-3 col-sm-3 col-md-3">Province</label>
+				<input type="text" class="form-control col-xs-9 col-sm-9 col-md-9" [(ngModel)]="address.administrative_area_level_2 || address.administrative_area_level_1" name="province"/>
+			</div>
+			<div class="form-group row">
+				<label class="col-xs-3 col-sm-3 col-md-3">Region</label>
+				<input type="text" class="form-control col-xs-9 col-sm-9 col-md-9" [(ngModel)]=address.administrative_area_level_1 name="region"/>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input"/>
+      By checking this, you have read and agreed to the terms & conditions.
+				</label>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary btn-lg">Save</button>
+				<a href="spot/create/1/2"class="btn btn-success btn-lg ">Next</a>
+			</div>
+		</form>
+	</div>

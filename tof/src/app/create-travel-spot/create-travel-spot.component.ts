@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Validators, FormGroup, FormArray, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-create-travel-spot',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateTravelSpotComponent implements OnInit {
 
-  constructor() { }
+  autocomplete: google.maps.places.Autocomplete;
+  address: any = {};
+  constructor( private ref: ChangeDetectorRef ) { }
 
   ngOnInit() {
+  }
+  
+  initialized(autocomplete: any) {
+    this.autocomplete = autocomplete;
+  }
+  
+  placeChanged() {
+	this.address = {};
+    let place = this.autocomplete.getPlace();
+    for (var i = 0; i < place.address_components.length; i++) {
+      var addressType = place.address_components[i].types[0];
+      this.address[addressType] = place.address_components[i].long_name;
+    }
+    this.ref.detectChanges();
   }
 
 }

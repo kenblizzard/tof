@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NguiMapModule } from '@ngui/map';
 
 
 
@@ -28,7 +29,10 @@ import { CreateTravelSpotPart2Component } from './create-travel-spot-part2/creat
     BrowserModule,
     FormsModule,
     routes,
-	NgbModule.forRoot()
+	NgbModule.forRoot(),
+	NguiMapModule.forRoot({
+      apiUrl: 'https://maps.google.com/maps/api/js?libraries=visualization,places,drawing&key=AIzaSyCEL1Q8kq-plzlZnji7l_kqefH_b1bnDWE'
+    })
   ],
   providers: [TravelSpotServiceService],
   bootstrap: [AppComponent]
