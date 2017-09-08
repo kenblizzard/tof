@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TravelSpotServiceService } from '../travel-spot-service.service';
+import { TravelSpotService } from '../services/travel-spot.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { TravelSpot } from '../travel-spot';
+import { TravelSpot } from '../models/travel-spot';
 
 @Component({
   selector: 'app-main-travel-spot',
@@ -16,14 +16,14 @@ export class MainTravelSpotComponent implements OnInit {
 	
 	currentTravelSpot : TravelSpot;
 
-  constructor(private TravelSpotServiceService: TravelSpotServiceService,
+  constructor(private TravelSpotService: TravelSpotService,
 	private route: ActivatedRoute,
 	private location: Location
   ) { }
 
   ngOnInit()  {
 	  this.route.paramMap
-    .switchMap((params: ParamMap) => this.TravelSpotServiceService.getTravelSpotById(+params.get('id')))
+    .switchMap((params: ParamMap) => this.TravelSpotService.getTravelSpotById(+params.get('id')))
     .subscribe(currentTravelSpot => this.currentTravelSpot = currentTravelSpot);
   }
 

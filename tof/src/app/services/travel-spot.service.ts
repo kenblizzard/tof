@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { TravelSpot } from './travel-spot';
+import { TravelSpot } from '../models/travel-spot';
 
 @Injectable()
-export class TravelSpotServiceService {
+export class TravelSpotService {
 
   constructor( ) { }
   

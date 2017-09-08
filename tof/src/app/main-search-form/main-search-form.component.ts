@@ -3,8 +3,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { TravelSpot }				from '../travel-spot';
-import { TravelSpotServiceService } from '../travel-spot-service.service';
+import { TravelSpot }				from '../models/travel-spot';
+import { TravelSpotService } from '../services/travel-spot.service';
 
 
 @Component({
@@ -17,10 +17,10 @@ export class MainSearchFormComponent implements OnInit {
 	travelSpots : TravelSpot[];	
 
 	setTravelSpots() : void {
-		this.travelSpotServiceService.getTravelSpots().then(travelSpots => this.travelSpots = travelSpots);
+		this.TravelSpotService.getTravelSpots().then(travelSpots => this.travelSpots = travelSpots);
 	}
 
-	constructor(private travelSpotServiceService: TravelSpotServiceService, 
+	constructor(private TravelSpotService: TravelSpotService, 
 		private route: ActivatedRoute,
 		private location: Location) { }
 
